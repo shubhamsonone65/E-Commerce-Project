@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}My Orders{% endblock title %}
+{% block pagename %}Orders{% endblock pagename %}
+{% block body %}
+{% load static %}
+<div class="container my-3">
+    {% if orders %}
+    <div class="row w-100">
+    <div class="col-6 fw-bold fs-6 mb-2">Your order</div>
+      <div class="col-3 fw-bold fs-6 mb-2">Ordered On</div>
+      <div class="col-3 fw-bold fs-6 mb-2">Action</div>
+{% for order in orders %}
+      <div class="col-6 fs-6 mb-2"><a href="orderdetails/{{order.id}}/" style="color:black">{{order}}</a></div>
+      <div class="col-3 fs-6 mb-2">{{order.orderdate}}</div>
+      <div class="col-3 fs-6 mb-2"><button id="c{{order.id}}" class="cancelOrder btn btn-outline-dark my-0 btn-sm" style="display:inline-block;width: auto;height: auto;color: white;">Cancel Order</button></div>
+    <hr>
+{% endfor %}
+    </div>
+    {% else %}
+    <p mt-5>You have no orders to show... <a href="/"> <u>Home</u></a></p>
+    {% endif %}
+</div>
+{% endblock body %}
+{% block js %}
+<script>
+$('body').on('click','.cancelOrder',function () {
+    console.log('yes')
+    id = this.id.slice(1,).toString();
+    confirmation=confirm('are you sure you want to cancel this order?');
+    if (confirmation){
+        location.href="/delete/"+id+"/";
+    }
+      })
+</script>
+{% endblock js %}

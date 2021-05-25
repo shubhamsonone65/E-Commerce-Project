@@ -1,0 +1,767 @@
+@media screen and (max-width:1140px){
+    .row{
+        --bs-gutter-x:0!important;
+    }
+    .card{
+        width: 16rem!important;
+    }
+    .addcart{
+        margin-right: 0!important;
+        width: 105px!important;
+    }
+    .card-text{
+        height: 2.4rem;
+        margin-bottom: 0!important;
+        margin-top: 0.2rem!important;
+    }
+}
+@media screen and (max-width:1044px){
+    .card{
+        width: 15rem!important;
+    }
+    .prodimg{
+        height: 370px!important;
+    }
+    .prodimgdiv{
+        height: max-content!important;
+    }
+    .card-title{
+        margin-bottom: 0.3rem!important;
+    }
+    .card-text{
+        margin-bottom: 0!important;
+        margin-top: 0.2rem!important;
+    }
+    .card img{
+        height: 235px!important;
+    }
+    .card-text{
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width:720px) and (max-width:1000px){
+    .card{
+        width: 13rem!important;
+    }
+    .addcart{
+        margin-left: 0.5rem!important;
+    }
+    .card img{
+        height: 200px!important;
+    }
+    .heading1 h1{
+        font-size: 30px;
+    }
+    .heading1 h3{
+        font-size: 25px;
+    }
+    .side{
+        width: 200px;
+    }
+    .page{
+        width: 75%;
+        margin-left: 200px;
+    }
+    .btn{
+        width: 105px;
+    }
+    .btn-txt{
+        font-size: 14px;
+    }
+    .carousel-inner{
+        height: 380px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 380px;
+        width: 100%;
+    }
+    .store{
+        padding: 32px 10px;
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width:870px){
+    .col{
+        width: 50%;
+    }
+    .prodimg{
+        height: 340px!important;
+    }
+    .card{
+        margin: auto;
+        width: 15rem!important;
+    }
+    .card img{
+        height: 235px!important;
+    }
+    .proddetaildiv h3{
+        font-size: 1.4rem!important;
+    }
+    .proddetaildiv h5{
+        font-size: 1.2rem!important;
+    }
+}
+
+@media screen and (min-width:545px) and (max-width:720px){
+    .container .submitform{
+        width: max-content!important;
+    }
+    .prodimg{
+        height: 292px!important;
+    }
+    .carousel-caption{
+        margin-bottom: -30px;
+    }
+    .more div{
+        padding: 0 10px!important;
+    }
+    .header{
+        padding: 0 0 0 10px!important;
+    }
+    .heading1{
+        padding: 25px 30px
+    }
+    .heading{
+        margin: 10px 0 10px 0
+    }
+    .heading1 h1{
+        font-size: 25px;
+    }
+    .heading1 h3{
+        font-size: 20px;
+    }
+    .side{
+        width: 165px!important;
+    }
+    .page{
+        width: 75%!important;
+        margin-left: 165px!important;
+    }
+    .submenu{
+        padding: 0 15px;
+    }
+    .btn{
+        width: 85px;
+        height: 38px;
+    }
+    .btn-txt{
+        font-size: 11px;
+    }
+    .side{
+        width: 200px;
+    }
+    .page{
+        width: 75%;
+        margin-left: 200px;
+    }
+    .carousel-inner{
+        height: 310px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 310px;
+        width: 100%;
+    }
+    .container h5{
+        font-size: 1.15rem!important;
+    }
+    body{
+        font-size: 0.95rem!important;
+    }
+}
+@media screen and (max-width:674px){
+    
+    .newb .mx-2{
+        margin-left: 0.25rem!important;
+        margin-right: 0.25rem!important;
+    }
+    .card{
+        margin: auto;
+        width: 12rem!important;
+    }
+    .card img{
+        height: 200px!important;
+    }
+    .card-body h5{
+        font-size: 1.1rem!important;
+    }
+    .addcart{
+        margin-left: 0!important;
+    }
+    .card a{
+        width: 90%!important;
+    }
+    body{
+        font-size: 0.9rem!important;
+    }
+}
+@media screen and (max-width:575px){
+.header{
+    font-size: 1.3rem!important;
+}
+.modal-body .row{
+    margin-bottom: 0!important;
+}
+.prodimgdiv{
+    width: 60%!important;
+}
+.proddetaildiv{
+    width: 100%!important;
+}
+.proddetaildiv .mx-3{
+    margin-left: 0!important;
+}
+
+}
+@media screen and (max-width:544px){
+    .container h5{
+        font-size: 1.1rem!important;
+    }
+    .prodimg{
+        height: 270px!important;
+    }
+    .prodimgdiv{
+        width: 41.66%!important;
+    }
+    .proddetaildiv{
+        width: 58.33%!important;
+    }
+    .proddetaildiv .mx-3{
+        margin-left: 1rem!important;
+    }
+    .proddetaildiv h3{
+        font-size: 1.2rem!important;
+    }
+    .proddetaildiv h5{
+        font-size: 1rem!important;
+    }
+    .container{
+        padding: 0!important;
+    }
+    .card{
+        margin: auto;
+        width: 13rem!important;
+    }
+    .header{
+        height: 100px;
+    }
+    .welcomeuser{
+        position: absolute;
+        top:80px;
+        right: -16px;
+        width: 210px;
+        background-color: rgb(218, 219, 219);
+    }
+    .pagename{
+        margin: 5px 0 0 0;
+    }
+    .searchbar{
+        margin: 0 0 5px 0!important;
+        width: 100%!important;
+    }
+    .searchbar1{
+        margin: 0 0 5px 0!important;
+        width: 80%!important;
+    }
+    .search{
+        width: 80%!important;
+    }
+    .carousel-caption{
+        margin-bottom: -30px;
+    }
+    .modal-dialog div{
+        padding: 8px;
+    }
+    .modal-body div{
+        margin-bottom: 0!important;
+        padding: 0 5px!important;
+    }
+    .modal-footer{
+        margin-top: 5px;
+        padding: 0!important;
+    }
+    .main{
+        margin: 0;
+        width: 95%;
+        margin: auto;
+    }
+    .ham{
+        display: inline-block;
+        cursor: pointer;
+        border: 0;
+        float: right;
+        position: absolute;
+        right: 0;
+        margin-top: 22px;
+        margin-left: 5px;
+        margin-right: 20px;
+        background: transparent;
+    }
+    .ham:focus{
+        outline: none;
+    }
+    .ham i{
+        font-size: 30px;
+    }
+    .menu{
+        margin: 0;
+        display: none;
+        border-bottom:2px solid rgb(81, 82, 82);
+        position: absolute;
+        top: 80px;
+        height:250%;
+        overflow: auto;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(218, 219, 219);
+    }
+    .submenu{
+        padding: 0 0 0 43%;
+    }
+    .side{
+        width: 100%;
+        /* margin: auto; */
+        position:fixed;
+        z-index: 16;
+        top: 0;
+        right: 0;
+        left: 0;
+        height:80px;
+        overflow:visible;
+        border: none;
+        background-color: rgb(218, 219, 219);
+        text-align: center;
+    }
+    .logo{
+        margin: 0;
+        margin-top: 20px;
+        /* margin-right: 20px; */
+        padding: 5px 10px 0 20px!important;
+        float: left;
+    }
+    .logo h3{
+        margin: 0;
+        padding-top: 1px;
+        font-size: 27px;
+    }
+    .bottom{
+        display: inline-block;
+        margin: 20px 0 0 4px;
+        padding: 8px 3px;
+        float:left;
+    }
+    .page{
+        margin-left: 0;
+        display: block;
+        margin-top: 70px;
+        z-index: -1;
+    }
+    .header{
+        padding: 10px 0;
+    }
+    .poster{
+        padding: 0;
+        width: 100%;
+    }
+    .heading1{
+        width: 70%;
+        padding: 30px 15px;
+    }
+    .heading1 h1{
+        font-size: 30px;
+    }
+    .heading1 h3{
+        font-size: 25px;
+    }
+    .btn{
+        width: 85px;
+        height: 38px;
+        text-align:justify;
+    }
+    .btn-txt{
+        font-size: 11px;
+        margin: 0;
+        padding: 12px 8px!important;
+    }
+    .carousel-inner{
+        height: 270px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 270px;
+        width: 100%;
+    }
+    #myCarousel{
+        margin: 0 0px;
+    }
+    .subscr{
+        padding: 20px 16px;
+    }
+    .subscr h1{
+        font-size: 25px;
+    }
+    .subscr .text{
+        font-size: 15px; 
+    }
+    .more{
+        padding: 0;
+    }
+    .store{
+        padding: 32px 5px;
+        margin-left: 20px;
+    }
+    
+}
+@media screen and (max-width:464px){
+    
+    .bottom{
+        float: right;
+        margin: 0;
+        font-size: 15px;
+        padding: 2px 0;
+        width: 40%;
+        text-align: left;
+    }
+}
+@media screen and (max-width:438px){
+    .card{
+        margin: auto;
+        width: 12rem!important;
+    }
+    .prodimg{
+        height: 250px!important;
+    }
+}
+
+@media screen and (max-width:420px){
+    .header{
+        padding: 10px 0;
+    }
+
+    .main{
+        width: 95%;
+        margin: auto;
+    }
+    
+    .heading1 h1{
+        font-size: 29px;
+    }
+    .heading1 h3{
+        font-size: 22px;
+    }
+    .heading2{
+        font-size: 1.1rem;
+    }
+    .more{
+        flex-direction: column;
+    }
+    .contact,.about,.store{
+        width: 100%;
+        padding: 5px 16px;
+        border-bottom: 1px solid rgb(168, 167, 167);
+    }
+    .txt2{
+        margin: 5px 0 ;
+    }
+    .contact input{
+        margin: 6px 0;
+    }
+    .icon2{
+        margin: 8px 0; 
+    }
+    .about a{
+        text-decoration: underline;
+    }
+}
+@media screen and (max-width:408px){
+    .prodimg{
+        height: 290px!important;
+    }
+    .prodimgdiv{
+        width: 66%!important;
+    }
+    .proddetaildiv{
+        width: 100%!important;
+    }
+    .proddetaildiv .mx-3{
+        margin-left: 0!important;
+    }
+    .card{
+        margin: auto;
+        width: 11rem!important;
+    }
+    .itemprice{
+        margin-block-end: 0!important;
+    }
+    .card img{
+        height: 180px!important;
+    }
+    .card-body h5{
+        font-size: 1rem!important;
+    }
+    .addcart{
+        margin-left: 0.5rem!important;
+    }
+}
+@media screen and (max-width:390px){.bottom{
+    margin-right: 30px;
+}}
+@media screen and (max-width:370px){
+    .col{
+        width: 100%!important;
+    }
+    .card{
+        margin: auto;
+        width: 13rem!important;
+    }
+    .card img{
+        height: 200px!important;
+    }
+}
+@media screen and (max-width:350px){
+    .logo h3{font-size: 25px;}
+    .header{font-size: 1.2rem;}
+    .btnsub{padding: 5px;}
+    .searchbar1{
+        width: 70%!important;
+    }
+    
+    .subscr h1{
+        font-size: 23px;
+    }
+    .subscr{
+        padding: 5px 16px;
+    }
+    .subscr .text{
+        font-size: 14px;
+    }
+    .heading2{padding: 0;}
+    .heading1 h1{
+        font-size: 22px;
+    }
+    .heading1 h3{
+        font-size: 18px;
+    }
+    .carousel-inner{
+        height: 220px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 220px;
+        width: 100%;
+    }
+    .carousel-caption h3{
+        margin-bottom: 0px;
+    }
+    .carousel-caption p{
+        margin-top: 5px;
+    }
+    .more{
+        flex-direction: column;
+    }
+    .contact,.about,.store{
+        width: 100%;
+        padding: 5px 16px;
+        border-bottom: 1px solid rgb(168, 167, 167);
+    }
+    .txt1{
+        font-size: 1.2rem;
+    }
+    .txt2{
+        margin: 5px 0 ;
+    }
+    .contact input{
+        margin: 6px 0;
+    }
+    .icon2{
+        margin: 8px 0; 
+    }
+}
+@media screen and (max-width:320px){
+    .prodimg{
+        height: 250px!important;
+    }
+    .proddetaildiv h3{
+        font-size: 1rem!important;
+    }
+    .proddetaildiv *{
+        font-size: 0.8rem!important;
+    }
+}
+@media screen and (max-width:280px){
+    .prodimg{
+        height: 230px!important;
+    }
+    .main{
+        margin-top: 90px!important;
+    }
+    .searchbar1{
+        width: 65%!important;
+    }
+    .search{
+        width: 70%!important;
+    }
+    .modal-dialog{
+        max-width: 200px;
+        margin: auto;
+    }
+    .modal-dialog div .modal-body{
+        padding: 0 !important;
+    }
+    .modal-footer button{
+        margin: 0 4px!important;
+    }
+    .heading1 h1{
+        font-size: 17px;
+    }
+    .bottom{
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    .heading1 h3{
+        font-size: 14px;
+    }
+    .heading2{
+        font-size: 0.9rem;
+    }
+    .carousel-inner{
+        height: 200px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 200px;
+        width: 100%;
+    }
+
+}
+@media screen and (max-width:250px){
+    .prodimg{
+        height: 200px!important;
+    }
+    .logo{
+        padding: 5px 10px 0 10px!important;
+    }
+    .logo h3{
+        margin: 0;
+        padding-top: 1px;
+        font-size: 24px;
+    }
+    .bottom{
+        font-size: 12px;
+        margin-top: 2px;
+    }
+    .menu .cat{
+        font-size: 1rem;
+        padding: 4px 16px;
+    }
+    .menu .subcat{
+        font-size: 0.9rem;
+        padding: 4px 16px;
+    }
+    .header{
+        padding: 5px;
+    }
+    .header p{
+        margin: 12px 0;
+        font-size: 18px;
+    }
+    .header p i{
+        font-size: 18px;
+    }
+    .heading1{
+        padding: 15px;
+        margin-top: 35px;
+    }
+    .heading1 h1{
+        font-size: 14px;
+    }
+    .heading1 h3{
+        font-size: 12px;
+    }
+    .bottom{
+        margin-right: 40px;
+    }
+    .logo{
+        padding: 0 0 0 5px!important;
+    }
+    .logo h3 {
+        font-size: 21px;
+    }
+    .btn{
+        width: 65px;
+        height: 30px;
+    }
+    
+    .btn-txt{
+        padding: 6px 4px!important;
+        font-size: 9px;
+    }
+    .heading2{
+        font-size: 0.81rem;
+    }
+    .carousel-inner{
+        height: 160px;
+    }
+    .carousel-caption{
+        margin-bottom: 0;
+    }
+    .carousel-caption h3{
+        font-size: 15px;
+    }
+    .carousel-caption p{
+        height: 10px;
+    }
+    .carousel-caption p button{
+        font-size: 11px;
+        height: 25px;
+        padding: 0 5px;
+    }
+    .carousel-inner .carousel-item img{
+        height: 160px;
+        width: 100%;
+    }
+    .heading3{
+        font-size: 15px!important;
+    }
+    .text{
+        font-size: 10px!important;
+    }
+    .btnsub{
+        width: 70px;
+        height: 30px;
+        font-size: 10px;
+        padding: 7px 5px;
+    }
+    .txt1{
+        font-size:1rem;
+    }
+    .txt2{
+        font-size:0.7rem;
+    }
+    .form{
+        font-size: 0.6rem;
+    }
+    .footer{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width:220px){
+    .bottom{
+        display: none;
+    }
+    .welcomeuser{
+        display: none;
+    }
+    .searchbar1{
+        display: none!important;
+    }
+    .searchbar{
+        width: 20%!important;
+    }
+    .main{
+        margin-top: 70px;
+    }
+    .header{
+        height: 50px!important;
+    }
+    .heading1{
+        margin-top: 0!important;
+    }
+}

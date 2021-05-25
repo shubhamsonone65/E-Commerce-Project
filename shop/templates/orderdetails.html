@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}My Orders{% endblock title %}
+{% block pagename %}My Orders{% endblock pagename %}
+{% block body %}
+{% load static %}
+<div class="container">
+    {% if orders %}
+    <ul class="list-group my-1" id="list" style="list-style-type: none;">
+        <li class="fw-bold">
+            <div class="container my-2">
+                <div class="row">
+                    <div class="col-7">Product</div>
+                    <div class="col-3 text-center">Quantity</div>
+                    <div class="col-2 text-center" style="overflow-wrap: break-word;">Price/Item</div>
+                </div>
+            </div>
+        </li>
+        {% for key,order in orders.items %}
+        <li style="
+        border-bottom: 1px solid black;
+    ">
+            <div class="container my-2">
+                <div class="row">
+                    <div class="col-7"><a href="/proddetails/{{key|slice:" 1:"}}" style="color:black">{{order.1}}</a>
+                    </div>
+                    <div class="col-3 text-center">{{order.0}}</div>
+                    <div class="col-2 text-center">{{order.2}}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="container my-2 fw-bold">
+        <div class="row">
+            <div class="col-7">Total Price</div>
+            <div class="col-3 text-center"></div>
+            <div class="col-2 text-center">{{total}}</div>
+        </div>
+    </div>
+    <div class="container my-4" style="border:1px solid black">
+        <p class="fw-bold"> Delivery Address:</p>
+        <p class="fw-bold">{{name}}</p>
+        <p class="text" style="color: black">{{address}} </p>
+        <p class="text" style="color: black">Ordered on : {{orderdate}} </p>
+        <p class="text" style="color: black">Phone no : {{phone}} </p>
+
+    </div>
+</div>
+{% endif %}
+{% endblock body %}
+{% block js %}
+<script>
+
+</script>
+{% endblock js %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock title %}
+{% block pagename %}Products{% endblock pagename %}
+{% block body %}
+{% load static %}
+<div class="container">
+    <div class="row row-cols-3 w-100">
+        {% if allproduct %}
+        {% for prod in allproduct %}
+        <div class="col">
+            <div class="card px-2 my-2" style="width: 18rem;">
+                <a href="/proddetails/{{prod.Proid}}/" class="m-auto" style="width: 80%;"><img
+                        src="/media/{{prod.image}}" class="card-img-top" alt="..."
+                        style="width:100%;height: 250px;margin-top:5px"></a>
+                <div class="card-body p-0">
+                    <h5 id="brandnameb{{prod.Proid}}" class="card-title fw-bold my-3">{{prod.brand}}</h5>
+                    <p class="card-text m-0" id="prodnameb{{prod.Proid}}" style="font-size: 1rem!important;height:3rem">{{prod.name}}</p>
+                    <p class="card-text mt-3 mb-2" style="font-size: 0.8rem!important;">{{prod.desc|truncatechars:35}}
+                    </p>
+                    <p style="display: inline-block" class="itemprice">&#8360;. <span id="priceb{{prod.Proid}}">{{prod.price}}</span></p>
+                    <span id="newb{{prod.Proid}}" class="newb"><button id="b{{prod.Proid}}"
+                            class="fw-bold btn-primary btn mx-4 addcart"
+                            style="display: inline-block;background-color: rgb(61,138,232);color: black;height: max-content;">Add
+                            to Cart</button></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="txt mt-4" style="height:300px;">Sorry... products did not found...</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

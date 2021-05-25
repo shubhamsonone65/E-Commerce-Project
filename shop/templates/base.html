@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Online Shopping Site | {% block title %}{% endblock title %}</title>
+    <link rel="icon" href="/media/IMG/icon.png" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'webfonts/all.min.css' %}">
+    <script src="{% static 'Javascript/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'CSS/Code.css/' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="{% static 'CSS/media.css' %}">
+    {% block style %}{% endblock style %}
+</head>
+
+<body style="max-width: 1200px; margin: auto;">
+    {% csrf_token %}
+    <div class="main">
+        <!-- messages display -->
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show fixed-top" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        <!-- side menu  -->
+        <nav class="side">
+            <div class="logo">
+                <a href="/">
+                    <h3>LOGO</h3>
+                </a>
+            </div>
+            <button class="ham" onclick="toggle()"><i class="fas fa-bars"></i></button>
+            {% if user.is_authenticated %}
+            <div class="fw-bold mx-3 fs-6 welcomeuser" style="height:30px;">
+                Hello... <p class="text-uppercase m-0" style="display: inline-block;">{{user.username}},</p> <a
+                    href="/logout" class="fs-6"><u>logout</u></a>
+            </div>
+            {% endif %}
+            <div class="menu" id="menuu">
+                <a class="cat" id="sh" onclick='coll("shirts","sh");'>Shirts <i class="fas fa-caret-down"></i></a>
+                <div class="submenu" id="shirts">
+                    <a href="/prodview/Casual-Shirts/" class="subcat"><i class="fas fa-caret-right"></i> Casual Shirt</a>
+                    <a href="/prodview/Formal-Shirts/" class="subcat"><i class="fas fa-caret-right"></i> Formal Shirt</a>
+                </div>
+                <a class="cat">Dresses <i class="fas fa-caret-down"></i></a>
+                <a class="cat" id="je" onclick='coll("jeans","je");'>Jeans <i class="fas fa-caret-down"></i></a>
+                <div class="submenu" id="jeans">
+                    <a href="/prodview/Skinny-Jeans/" class="subcat"><i class="fas fa-caret-right"></i> Skinny</a>
+                    <a href="/prodview/Regular-Jeans/" class="subcat"><i class="fas fa-caret-right"></i> Regular</a>
+                    <a href="/prodview/Slim-Jeans/" class="subcat"><i class="fas fa-caret-right"></i> Slim</a>
+                </div>
+                <a class="cat" id="ja" onclick='coll("jackets","ja");'>Jackets <i class="fas fa-caret-down"></i></a>
+                <div class="submenu" id="jackets">
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Formal</a>
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Sports</a>
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Party</a>
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Casual</a>
+                </div>
+                <a class="cat" id="gy" onclick='coll("gymwear","gy");'>Gymwear <i class="fas fa-caret-down"></i></a>
+                <div class="submenu" id="gymwear">
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Sport Tshirts</a>
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> Joggers</a>
+                    <a href="#" class="subcat"><i class="fas fa-caret-right"></i> TrackSuit</a>
+                </div>
+                <a class="cat">Blazers <i class="fas fa-caret-down"></i></a>
+                <div class="submenu"></div>
+                <a class="cat" id="sho" onclick='coll("shoes","sho");'>Shoes <i class="fas fa-caret-down"></i></a>
+                <div class="submenu" id="shoes">
+                    <a href="/prodview/Casual-Shoes/" class="subcat"><i class="fas fa-caret-right"></i> Casual Shoes</a>
+                    <a href="/prodview/Sport-Shoes/" class="subcat"><i class="fas fa-caret-right"></i> Sport Shoes</a>
+                    <a href="/prodview/Formal-Shoes/" class="subcat"><i class="fas fa-caret-right"></i> Formal Shoes</a>
+                </div>
+            </div>
+            {% if user.is_authenticated %}
+            <a class="bottom" href="/myorders/" role="button">My Orders</a>
+            {% else %}
+            <a class="bottom" data-bs-toggle="modal" href="#login_user" role="button">Login/SignUp</a>
+            {% endif %}
+            <a href="#cont" class="bottom">Contact</a>
+            <a href="#" class="bottom">Newslatter</a>
+        </nav>
+        <!-- main page  -->
+        <div class="page">
+            <!-- header section  -->
+            <div class="header">
+                <p style="display: block;float: left;" class="pagename">{% block pagename %}{% endblock pagename %}</p>
+                <div class="my-4 searchbar" style="display: inline-block;float: right;width: max-content;">
+                    <div style="display: inline-block;width: max-content;" class="searchbar1">
+                    <form action="/search/" method="GET">
+                        <input name="search" type="search" placeholder="Search for products..." class="search"><button type="submit" style="font-size: 0;border:none;
+                        border-bottom-right-radius: 20px;border-top-right-radius: 20px;
+                    "><i class="fas fa-search mx-1"></i></button>
+                    </form>
+                </div>
+                    <a href="/cart" class="cartlink"><i class="fas fa-shopping-cart"
+                            style="margin-left: 8px;color: black;"><span
+                                style="color: black;font-size: 110%;font-family: 'Times New Roman', Times, serif;font-weight: 500;"
+                                id="cartnum"></span></i>
+                    </a>
+                </div>
+            </div>
+            {% block body %}{% endblock body %}
+            <!-- about store section  -->
+            <div class="more">
+                <div class="contact" id="cont">
+                    <p class="txt1">Contact Us</p>
+                    <p class="txt2">Questions? Go Ahead</p>
+                    <form action="contact" name="myform" onsubmit="return validate();" method="POST">{% csrf_token %}
+                        <input type="text" class="form" placeholder="Name" name="name" required>
+                        <input type="text" class="form" placeholder="Email" name="mail" required>
+                        <input type="text" class="form" placeholder="Phone No." name="phone">
+                        <input type="text" class="form" placeholder="Message" name="message" required>
+                        <input type="submit" class="send form" value="Send"><span id="sendtxt">
+                        </span>
+                    </form>
+                </div>
+
+                <div class="about">
+                    <p class="txt1">About</p>
+                    <a href="#" class="txt2">About us</a>
+                    <a href="#" class="txt2">We're hiring</a>
+                    <a href="#" class="txt2">Support</a>
+                    <a href="#" class="txt2">Find store</a>
+                    <a href="#" class="txt2">Shipment</a>
+                    <a href="#" class="txt2">Payment</a>
+                    <a href="#" class="txt2">Gift card</a>
+                    <a href="#" class="txt2">Return</a>
+                    <a href="#" class="txt2">Help</a>
+                </div>
+                <div class="store">
+                    <p class="txt1">Store</p>
+                    <p class="txt2"><i class="fas fa-map-marker-alt icon"></i>Company Name</p>
+                    <p class="txt2"><i class="fas fa-phone-alt icon"></i>1234567890</p>
+                    <p class="txt2"><i class="fas fa-envelope icon"></i>Shubham@mail.com</p>
+                    <p class="txt1">We Accept</p>
+                    <p class="txt2"><i class="fab fa-cc-amex icon"></i>Amex</p>
+                    <p class="txt2"><i class="far fa-credit-card icon"></i>Credit Card</p>
+                    <p class="icon2"><i class="fab fa-facebook-square"></i><i class="fab fa-instagram"></i><i
+                            class="fab fa-snapchat"></i><i class="fab fa-pinterest-p"></i><i
+                            class="fab fa-twitter adjust"></i><i class="fab fa-linkedin-in"></i></p>
+                </div>
+            </div>
+            <!-- footer section  -->
+            <div class="footer">
+                <p>Powered by myself.lol</p>
+            </div>
+            <!-- First modal dialog -->
+            <div class="modal fade" id="login_user" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="login">{% csrf_token %}
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3" name="password"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnsub" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btnsub">Login</button>
+                                    <a type="" class="">forget password?</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- Toogle to second dialog -->
+                            <label for="signup" class='heading'>New here? Click to </label><button id='signup'
+                                class="btnsub" data-bs-target="#signup_user" data-bs-toggle="modal"
+                                data-bs-dismiss="modal">Signup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second modal dialog -->
+            <div class="modal fade" id="signup_user" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">SignUp</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="signup">{% csrf_token %}
+                                <div class="row mb-3">
+                                    <label for="name" class="col-sm-4 col-form-label">Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" name='name' class="form-control" id="name" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control" id="inputEmail3" name='mail' required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="tel" class="col-sm-4 col-form-label">Phone No</label>
+                                    <div class="col-sm-8">
+                                        <input type="tel" class="form-control" id="tel" maxlength="10" name='phone'
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" id="inputPassword30" name='pass1'
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword31" class="col-sm-4 col-form-label">Confirm
+                                        Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" id="inputPassword31" name='pass2'
+                                            oninput="passconfirm()" required>
+                                        <div class="mt-3"><span id="conpass"></span></div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btnsub" data-bs-dismiss="modal">Close</button>
+                                    <button id="signupbut" type="submit" class="btnsub">Signup</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- Toogle to first dialog, `data-bs-dismiss` attribute can be omitted - clicking on link will close dialog anyway -->
+                            <label for="login" class='heading'>Already had account? Click to </label><button id='login'
+                                class="btnsub" data-bs-target="#login_user" data-bs-toggle="modal"
+                                data-bs-dismiss="modal">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'Javascript/new.js' %}"></script>
+    {% block js %}{% endblock js %}
+</body>
+
+</html>
